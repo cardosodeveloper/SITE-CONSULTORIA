@@ -135,7 +135,7 @@ body {
     line-height: 1.5;
 }
 
-.sobre__conteudo__subtitulo, .servicos__conteudo__subtitulo, .metodologia__conteudo__subtitulo {
+.sobre__conteudo__subtitulo, .servicos__conteudo__subtitulo {
     color: var(--cor-terciaria);
     font-family: var(--fonte-primaria);
     font-size: 1.8rem;
@@ -260,6 +260,15 @@ body {
 .metodologia {
     padding: 4rem 3rem;
     margin: 3rem 6rem;
+}
+
+ .metodologia__conteudo__subtitulo {
+  display: flex;
+  justify-content: center;
+  color: var(--cor-terciaria);
+  font-family: var(--fonte-primaria);
+  font-size: 1.8rem;
+  line-height: 1.5;
 }
 
 /** timeline **/
