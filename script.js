@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener("click", function (e) {
 
       const targetId = this.getAttribute("href");
-
       if (targetId === "#") return;
 
       const target = document.querySelector(targetId);
@@ -39,15 +38,40 @@ document.addEventListener("DOMContentLoaded", function () {
       const header = document.querySelector("header");
       const headerHeight = header ? header.offsetHeight : 0;
 
+      const startPosition = window.pageYOffset;
       const targetPosition =
         target.getBoundingClientRect().top +
         window.pageYOffset -
         headerHeight;
 
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth"
-      });
+      const distance = targetPosition - startPosition;
+      const duration = 900; // quanto maior, mais suave
+      let start = null;
+
+      function easeInOutCubic(t) {
+        return t < 0.5
+          ? 4 * t * t * t
+          : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+
+      function animation(currentTime) {
+        if (start === null) start = currentTime;
+        const timeElapsed = currentTime - start;
+        const progress = Math.min(timeElapsed / duration, 1);
+
+        const easedProgress = easeInOutCubic(progress);
+
+        window.scrollTo(
+          0,
+          startPosition + distance * easedProgress
+        );
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      }
+
+      requestAnimationFrame(animation);
 
     });
   });
