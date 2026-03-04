@@ -20,25 +20,36 @@ document.querySelectorAll(".card, .step").forEach(el => {
 // Smooth Scroll com offset
 // =============================
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+document.addEventListener("DOMContentLoaded", function () {
 
-    const targetId = this.getAttribute('href');
-    const target = document.querySelector(targetId);
+  const links = document.querySelectorAll('a[href^="#"]');
 
-    if (!target) return;
+  links.forEach(link => {
+    link.addEventListener("click", function (e) {
 
-    e.preventDefault();
+      const targetId = this.getAttribute("href");
 
-    const header = document.querySelector('header');
-    const headerHeight = header ? header.offsetHeight : 0;
+      if (targetId === "#") return;
 
-    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+      const target = document.querySelector(targetId);
+      if (!target) return;
 
-    window.scrollTo({
-      top: targetPosition,
-      behavior: 'smooth'
+      e.preventDefault();
+
+      const header = document.querySelector("header");
+      const headerHeight = header ? header.offsetHeight : 0;
+
+      const targetPosition =
+        target.getBoundingClientRect().top +
+        window.pageYOffset -
+        headerHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth"
+      });
+
     });
-
   });
+
 });
