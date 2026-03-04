@@ -372,4 +372,23 @@ footer {
   .timeline-item::after {
     left: 14px;
   }
+
+}
+
+/* ================= MOBILE HEADER SIMPLIFICADO ================= */
+
+@media (max-width: 768px) {
+
+  header {
+    justify-content: center;
+    padding: 20px;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
 }
