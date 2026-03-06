@@ -59,7 +59,7 @@ section {
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 50px;
     text-align: center;
 }
@@ -76,13 +76,13 @@ h2 span {
 
 .subtitle {
     color: var(--primary);
-    font-size: 0.75rem;
+    font-size: 1rem;
     letter-spacing: 2px;
     margin-bottom: 20px;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     line-height: 1.2;
     margin-bottom: 25px;
 }
@@ -289,7 +289,7 @@ h2 span {
 }
 
 .contact h2 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 20px;
 }
 
@@ -319,7 +319,7 @@ footer {
 }
 
 .made {
-    font-size: 0.75rem;
+    font-size: 2rem;
 }
 
 .heart {
@@ -384,3 +384,4 @@ footer {
         font-size: 1rem;
     }
 }
+
