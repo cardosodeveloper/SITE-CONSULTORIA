@@ -173,6 +173,7 @@ h2 span {
     color: var(--muted);
     line-height: 1.7;
     max-width: 900px;
+    font-size: 1.5rem;
 }
 
 /* ================= SERVICES ================= */
@@ -302,6 +303,7 @@ h2 span {
     max-width: 600px;
     margin: 0 auto 35px auto;
     line-height: 1.6;
+    font-size: 1.5rem;
 }
 
 /* ================= FOOTER ================= */
@@ -384,4 +386,5 @@ footer {
         font-size: 1rem;
     }
 }
+
 
